@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Marksheet</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:400px;
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+h1{
+    color:#0077ff;
+}
+
+.result{
+    margin-top:20px;
+    font-size:18px;
+    line-height:35px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Student Marksheet</h1>
+
+<div id="result" class="result"></div>
+
+</div>
+
+<script>
+
+let english = Number(prompt("Enter English Marks"));
+
+let math = Number(prompt("Enter Math Marks"));
+
+let computer = Number(prompt("Enter Computer Marks"));
+
+let totalMarks = 300;
+
+let obtainedMarks = english + math + computer;
+
+let percentage = (obtainedMarks / totalMarks) * 100;
+
+let grade;
+
+if(percentage >= 80){
+    grade = "A+";
+}
+else if(percentage >= 70){
+    grade = "A";
+}
+else if(percentage >= 60){
+    grade = "B";
+}
+else if(percentage >= 50){
+    grade = "C";
+}
+else{
+    grade = "Fail";
+}
+
+document.getElementById("result").innerHTML =
+
+"<b>Total Marks :</b> " + totalMarks + "<br>" +
+
+"<b>Obtained Marks :</b> " + obtainedMarks + "<br>" +
+
+"<b>Percentage :</b> " + percentage.toFixed(2) + "%" + "<br>" +
+
+"<b>Grade :</b> " + grade;
+
+</script>
+
+</body>
+</html>
